@@ -9,4 +9,4 @@ export const downloadImage = (id: string) => http.get(`/photos/${id}/download`)
 
 export const fetchImage = (query: string, page = 1) =>
     http.get(`/photos/?query=${query}&per_page=${PER_PAGE}&page=${page}`)
-export const fetchRandomImage = () => http.get(`/photos/random/?count=${PER_PAGE}&client_id=vs2Za6amoQXbt0NN0V3Bp6-kqaStTivQJParup7FJ4Y`)
+export const fetchRandomImage = () => http.get(`/photos/random/?count=${PER_PAGE}`)
