@@ -8,5 +8,5 @@ export const unlikeImage = (id: string) => http.delete(`/photos/${id}/like`)
 export const downloadImage = (id: string) => http.get(`/photos/${id}/download`)
 
 export const fetchImage = (query: string, page = 1) =>
-    http.get(`/photos/?query=${query}&per_page=${PER_PAGE}&page=${page}`)
+    http.get(`search/photos/?query=${query}&per_page=${PER_PAGE}&page=${page}`)
 export const fetchRandomImage = () => http.get(`/photos/random/?count=${PER_PAGE}`)

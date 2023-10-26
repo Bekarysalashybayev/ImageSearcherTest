@@ -5,7 +5,7 @@
                 <be-user />
                 <div class="actions">
                     <be-button class="like" @click="like">
-                        <like-icon />
+                        <like-icon :is-liked="liked_by_user"/>
                     </be-button>
                     <be-button class="download" @click="downloadPhoto">
                         <download-icon />

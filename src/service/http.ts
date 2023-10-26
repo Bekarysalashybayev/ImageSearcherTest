@@ -3,8 +3,8 @@ import axios from 'axios';
 const instance = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
   headers: {
-    Authorization: "Client-ID vs2Za6amoQXbt0NN0V3Bp6-kqaStTivQJParup7FJ4Y"
-  }
+    Authorization: `Client-ID ${import.meta.env.VITE_API_ACCESS_KEY}`
+  },
 })
 
 instance.interceptors.request.use(async (config) => {

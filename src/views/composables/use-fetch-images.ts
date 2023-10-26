@@ -21,7 +21,7 @@ export const useFetchImages = () => {
         try {
             loading.value = true
             const { data } = await fetchImage(searchText, page)
-            images.value = images.value.concat(data)
+            images.value = images.value.concat(data.results)
         } catch (e) {
             alert(e)
         } finally {

@@ -2,8 +2,8 @@
     <div class="images">
         <div class="container">
             <div class="images-block">
-                <template v-for="(img, i) in images" :key="i">
-                    <img v-if="img" :src="img['urls']['full']" alt="" @click="goTo(img['id'])" />
+                <template v-for="(img, i) in images" >
+                    <img v-if="img" :key="i" :src="img?.urls?.small || img['url']" alt="" @click="goTo(img.id)" />
                 </template>
             </div>
         </div>
@@ -13,12 +13,15 @@
 <script setup lang="ts">
 import router from "@/router";
 
-defineProps({
-    images: {
-        type: Array,
-        default: () => []
+defineProps<{
+  images: {
+    id: string,
+    url?: string,
+    urls?: {
+      small: string
     }
-})
+  }[]
+}>()
 
 const goTo = (id: string) => router.push(`/image/${id}`)
 </script>
@@ -31,7 +34,6 @@ const goTo = (id: string) => router.push(`/image/${id}`)
         display: flex;
         align-items: center;
         flex-wrap: wrap;
-        justify-content: space-between;
         gap: 20px;
 
         img {
